@@ -48,6 +48,60 @@ More Information: \
 [Datasheet RP2040](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf)
 
 ### Voltage Divider with RC Filter
+This Circuit is the simplest and the lowest-cost and the following figure shows the circuit used to measure the NTC sensor.
+<div align="center">
+    <img src="img/DividerVoltagewithRC.jpeg" alt="NTC Model" width="220" height="200"> <figcaption><b>Figure 3:</b> NTC Circuit.</figcaption>
+</div>
+
+$$
+    V_{ADC} = \frac{R_{NTC}}{R_{NTC} + R_1} V_{CC}
+$$
+
+Now, we include the ADC input Capacitance and we obtain Thevenin equivalent Circuit:
+
+<div align="center">
+    <img src="img/DividerVoltagewithRCwithCadc.jpeg" alt="NTC Model" width="220" height="190"> <figcaption><b>Figure 4:</b> NTC Circuit with Input ADC Capacitance.</figcaption>
+</div>
+<br>
+
+$$
+    V_{TH} = \frac{R_{NTC}}{R_{NTC} + R_1} V_{CC}; \quad R_{TH} = \frac{R_1 R_{NTC}}{ R_1 + R_{NTC} } + R_2;  \quad C_{eq} = C + C_{ADC}
+$$
+
+The following Circuit (Thevenin Circuit) is an RC Circuit, so the capacitance will charge to 63.2% in one time constant τ.
+
+<center>
+
+For 63.2 % $\quad \rightarrow  \quad τ = R_{TH} \cdot C_{eq}$
+
+For 99 % $\quad \rightarrow  \quad 5τ = 5 R_{TH} \cdot C_{eq}$
+
+</center>
+
+<div align="center">
+    <img src="img/DV_RC_Thevenin.jpeg" alt="NTC Model" width="190" height="120"> <figcaption><b>Figure 5:</b> Thevenin Circuit.</figcaption>
+</div>
+
+<br>
+
+The RP2040 measures NTC sensor every 100 ms (10 Hz). Supose the  NTC has a resistance of 1.816 kΩ, so $R_1$ is chosen as 1.82 kΩ with a 1% tolerance. Additionaly, C is chosen as 10 μF. Therefore, we calculate the values ​​of the circuit elements:
+
+$$
+    5 \tau = 100 \text{ [ms]} \quad \rightarrow \quad \tau = 20 \text{ [ms]}; \quad \quad 
+    C_{eq} \approx 10 \text{ [μF];} \\ \text{ at 10 °C} \quad \rightarrow \quad  R_{NTC} = 4.4951 \text{ [kΩ]}
+ $$
+
+$$
+    R_2 = \frac{\tau}{C_{eq}} - \frac{R_1 R_{NTC}}{ R_1 + R_{NTC} } = 704.5174 \text{ [Ω]} \approx 698 \text{ [Ω]}
+$$
+
+As shown, the NTC value at 10°C is used because it is the highest resistance within the 10°C to 50°C range.
+
+Now, we obtain the Frequency Response of the circuit:
+
+$$
+    H(j\omega) = \frac{1}{j\omega R_{TH} C_{eq}}
+$$
 
 ### 
 
