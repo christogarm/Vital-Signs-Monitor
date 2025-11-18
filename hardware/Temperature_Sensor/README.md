@@ -17,15 +17,15 @@ Negative Temperature Coefficient Thermistor (NTC) is a type of temperature-sensi
 The resistance–temperature relationship:
 
 $$
-R(T) = R_{25} \cdot e^{\Beta(\frac{1}{T}-\frac{1}{T_{25}})} 
+R(T) = R_{25} \cdot e^{B(\frac{1}{T}-\frac{1}{T_{25}})} 
 $$
 <div align="center">
-    <img src="img/NTC_Model.jpg" alt="NTC Model" width="350" height="250"> <figcaption><b>Figure 1:</b> NTC thermistor resistance–temperature model.</figcaption>
+    <img src="img/NTC_Model.jpg" alt="NTC Model" width="350" height="250"><br>  <figcaption><b>Figure 1:</b> NTC thermistor resistance–temperature model.</figcaption>
 </div>
 <br>
 This design considers a range of 10 °C to 50 °C, so it uses a resistance of 820.73 Ω to 4.495 kΩ
 <div align="center">
-    <img src="img/NTC_Model2.jpg" alt="NTC Model" width="350" height="250"> <figcaption><b>Figure 2:</b> NTC thermistor resistance–temperature model. <br> (Range of 10 °C to 50 °C).</figcaption>
+    <img src="img/NTC_Model2.jpg" alt="NTC Model" width="350" height="250"><br>  <figcaption><b>Figure 2:</b> NTC thermistor resistance–temperature model. <br> (Range of 10 °C to 50 °C).</figcaption>
 </div>
 
 <br>
@@ -50,7 +50,7 @@ More Information: \
 ### Voltage Divider with RC Filter
 This Circuit is the simplest and the lowest-cost and the following figure shows the circuit used to measure the NTC sensor.
 <div align="center">
-    <img src="img/DividerVoltagewithRC.jpeg" alt="NTC Model" width="220" height="200"> <figcaption><b>Figure 3:</b> NTC Circuit.</figcaption>
+    <img src="img/DividerVoltagewithRC.jpeg" alt="NTC Model" width="220" height="200"> <br> <figcaption><b>Figure 3:</b> NTC Circuit.</figcaption>
 </div>
 
 $$
@@ -60,7 +60,7 @@ $$
 Now, we include the ADC input Capacitance and we obtain Thevenin equivalent Circuit:
 
 <div align="center">
-    <img src="img/DividerVoltagewithRCwithCadc.jpeg" alt="NTC Model" width="220" height="190"> <figcaption><b>Figure 4:</b> NTC Circuit with Input ADC Capacitance.</figcaption>
+    <img src="img/DividerVoltagewithRCwithCadc.jpeg" alt="NTC Model" width="220" height="190"> <br>  <figcaption><b>Figure 4:</b> NTC Circuit with Input ADC Capacitance.</figcaption>
 </div>
 <br>
 
@@ -79,7 +79,7 @@ For 99 % $\quad \rightarrow  \quad 5τ = 5 R_{TH} \cdot C_{eq}$
 </center>
 
 <div align="center">
-    <img src="img/DV_RC_Thevenin.jpeg" alt="NTC Model" width="190" height="120"> <figcaption><b>Figure 5:</b> Thevenin Circuit.</figcaption>
+    <img src="img/DV_RC_Thevenin.jpeg" alt="NTC Model" width="190" height="120"> <br> <figcaption><b>Figure 5:</b> Thevenin Circuit.</figcaption>
 </div>
 
 <br>
@@ -104,11 +104,11 @@ $$
 $$
 
 <div align="center">
-    <img src="img/BodeDividerVoltage.png" alt="NTC Model" width="350" height="220"> <figcaption><b>Figure 5:</b> Bode Diagram.</figcaption>
+    <img src="img/BodeDividerVoltage.png" alt="NTC Model" width="350" height="220"> <br> <figcaption><b>Figure 6:</b> Bode Diagram.</figcaption>
 </div>
 
 
-### Voltage Divider with Sallen Key Filter
+### Voltage Divider with Sallen-Key Filter
 
 
 
