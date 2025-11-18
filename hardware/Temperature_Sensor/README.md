@@ -84,7 +84,7 @@ For 99 % $\quad \rightarrow  \quad 5τ = 5 R_{TH} \cdot C_{eq}$
 
 <br>
 
-The RP2040 measures NTC sensor every 100 ms (10 Hz). Supose the  NTC has a resistance of 1.816 kΩ, so $R_1$ is chosen as 1.82 kΩ with a 1% tolerance. Additionaly, C is chosen as 10 μF. Therefore, we calculate the values ​​of the circuit elements:
+The RP2040 measures NTC sensor every 100 ms (10 Hz). Supose the  NTC has a resistance of 1.816 kΩ, so $R_1$ is chosen as 1.82 kΩ (at 10 °C) with a 1% tolerance. Additionaly, C is chosen as 10 μF. Therefore, we calculate the values ​​of the circuit elements:
 
 $$
     5 \tau = 100 \text{ [ms]} \quad \rightarrow \quad \tau = 20 \text{ [ms]}; \quad \quad 
@@ -103,7 +103,12 @@ $$
     H(j\omega) = \frac{1}{j\omega R_{TH} C_{eq}}
 $$
 
-### 
+<div align="center">
+    <img src="img/BodeDividerVoltage.png" alt="NTC Model" width="350" height="220"> <figcaption><b>Figure 5:</b> Bode Diagram.</figcaption>
+</div>
+
+
+### Voltage Divider with Sallen Key Filter
 
 
 
